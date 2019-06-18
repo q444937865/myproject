@@ -29,10 +29,10 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = function(env, argv) {
 	return {
-		// mode: 'development',
-		// devtool: 'inline-source-map'
-		mode: env.production ? 'production' : 'development',
-		devtool: env.production ? 'source-maps' : 'eval',
+		mode: 'development',
+		devtool: 'inline-source-map',
+		// mode: env.production ? 'production' : 'development',
+		// devtool: env.production ? 'source-maps' : 'eval',
 
 		entry: './src/index.js',
 		output: {
