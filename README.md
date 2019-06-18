@@ -1,7 +1,7 @@
 # 🚀 Welcome to your new awesome project!
 
 [![Build Status](https://travis-ci.org/q444937865/react-zz.svg?branch=master)](https://travis-ci.org/q444937865/react-zz)
-[![Gitter](https://badges.gitter.im/Join Chat.svg)]
+
 
 This project has been created using **webpack scaffold**, you can now run
 
