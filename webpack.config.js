@@ -58,6 +58,7 @@ module.exports = function(env, argv) {
 			rules: [{
 					test: /.(js|jsx)$/,
 					include: [path.resolve(__dirname, 'src')],
+					publicPath: './',
 					loader: 'babel-loader',
 					options: {
 						plugins: ['syntax-dynamic-import'],
