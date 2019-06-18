@@ -39,7 +39,7 @@ module.exports = function(env, argv) {
 			filename: '[name].[hash].js',
 			path: path.resolve(__dirname, 'dist')
 		},
-
+		context: __dirname,
 		plugins: [
 			// 打包前先清空
 			new CleanWebpackPlugin() ,
@@ -58,14 +58,14 @@ module.exports = function(env, argv) {
 			rules: [{
 					test: /.(js|jsx)$/,
 					include: [path.resolve(__dirname, 'src')],
-					publicPath: './',
 					loader: 'babel-loader',
 					options: {
 						plugins: ['syntax-dynamic-import'],
 						presets: [
 							[ '@babel/preset-env', { modules: false } ]
 						]
-					}
+					},
+					exclude: /node_modules/ // 排除掉node_modules，优化打包速度
 				},
 				{
 					test: /\.css$/, // 解析css
@@ -90,12 +90,6 @@ module.exports = function(env, argv) {
 				{
 					test: /\.(htm|html)$/, // img标签内src引用的图片
 					use: 'html-withimg-loader'
-				},
-				{
-					test: /\.js$/,
-					use: 'babel-loader',
-					include: /src/, // 只转化src目录下的js
-					exclude: /node_modules/ // 排除掉node_modules，优化打包速度
 				},
 				/* // svg图片以及字体文件
 				{
