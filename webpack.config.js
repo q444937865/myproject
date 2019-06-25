@@ -49,6 +49,7 @@ module.exports = function(env, argv) {
 				// 在src目录下创建一个index.html页面当做模板来用
 				template: './src/index.html',
 				hash: true, // 会在打包好的bundle.js后面加上hash串
+				favicon: path.resolve('mio.ico')
 			}),
 			// 热更新，热更新不是刷新
 			new webpack.HotModuleReplacementPlugin()
