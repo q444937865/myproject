@@ -1,5 +1,5 @@
 # 🚀 Welcome to my project!
-纯凭爱好。
+纯凭喜好。
 
 [![Build Status](https://travis-ci.org/q444937865/react-zz.svg?branch=master)](https://travis-ci.org/q444937865/react-zz)
 
