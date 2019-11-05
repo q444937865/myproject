@@ -27,6 +27,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
+const logPlugin = require('./log-plugin')
 module.exports = function(env, argv) {
 	return {
 		mode: 'development',
@@ -52,7 +53,8 @@ module.exports = function(env, argv) {
 				favicon: path.resolve('mio.ico')
 			}),
 			// 热更新，热更新不是刷新
-			new webpack.HotModuleReplacementPlugin()
+			new webpack.HotModuleReplacementPlugin(),
+			new logPlugin()
 		],
 
 		module: {
@@ -120,6 +122,7 @@ module.exports = function(env, argv) {
 			open: true,             // 自动打开浏览器
 			hot: true,              // 开启热更新
 			overlay: true, 					// 浏览器页面上显示错误
+			noInfo: true
 		}
 	}
 };
