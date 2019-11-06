@@ -27,7 +27,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
-const logPlugin = require('./log-plugin')
+const logPlugin = require('log-plugin')
 module.exports = function(env, argv) {
 	return {
 		mode: 'development',
@@ -54,7 +54,7 @@ module.exports = function(env, argv) {
 			}),
 			// 热更新，热更新不是刷新
 			new webpack.HotModuleReplacementPlugin(),
-			new logPlugin()
+			new logPlugin({showWords: true})
 		],
 
 		module: {
