@@ -11,15 +11,16 @@ const decrease = {
 }
 //这是reducer
 const reducer = (state = tiger, action) => {
-  return state += action.num?action.num:0;
-  // switch (action.type){
-  //   case '涨工资': 
-  //     return state += 100;
-  //   case '扣工资': 
-  //     return state -= 100;
-  //   default: 
-  //     return state;
-  // }
+  state += action.num ? Number(action.num) : 0;
+  return state;
+  switch (action.type){
+    case '涨工资': 
+      return state += 100;
+    case '扣工资': 
+      return state -= 100;
+    default: 
+      return state;
+  }
 }
 
 export default reducer

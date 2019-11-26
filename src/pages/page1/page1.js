@@ -8,7 +8,7 @@ class page1 extends Component {
   }
   jian=()=>{
     const { PayIncrease, PayDecrease } = this.props;
-    PayDecrease( this.refs.money.value || 0 )
+    PayDecrease( -this.refs.money.value || 0 )
   }
   render() {
     const { PayIncrease, PayDecrease } = this.props;
@@ -17,7 +17,7 @@ class page1 extends Component {
         <h2>当月工资为{this.props.tiger}</h2>
         <h2>名字为{this.props.name}</h2>
         加钱：<input ref="money"/>元
-        <button onClick={PayIncrease}>升职加薪</button>
+        <button onClick={()=>PayIncrease(this.refs.money.value)}>升职加薪</button>
         <button onClick={this.jian}>迟到罚款</button>
       </div>
     );
