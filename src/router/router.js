@@ -23,11 +23,19 @@ const Routes = () => (
     //         </Switch>
     //     </div>
     // </Router>
+    // BrowserRouter
+    // <Router>
+    //     <Route exact path='/' component={Home} />
+    //     <Route path='/page1' component={Page1}/>
+    //     <Route path='*' component={Nfpage} />
+    // </Router>
     // 静态路由
     <HashRouter>
         <Route exact path='/' component={Home} />
         <Route path='/page1' component={Page1}/>
-        <Route path='/404' component={Nfpage} />
+        {/* <Route path='*' component={Nfpage} /> */}
+        {/* <Route path='/404' component={Nfpage} />
+        <Redirect from='*' to='/404' /> */}
     </HashRouter>
 );
 export default Routes;
