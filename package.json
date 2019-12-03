@@ -3,11 +3,14 @@
   "version": "1.0.1",
   "description": "My webpack project for react",
   "main": "index.js",
+  "bin": {
+    "mio": "./bin/mio.js"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack-dev-server --config bin/webpack.dev.js",
-    "build": "webpack --config bin/webpack.prod.js",
-    "build-dev": "webpack --env.production --config bin/webpack.prod.js"
+    "start": "webpack-dev-server --config bin/mio.dev.js",
+    "build": "webpack --config bin/mio.prod.js",
+    "build-dev": "webpack --env.production --config bin/mio.prod.js"
   },
   "author": "zz",
   "license": "ISC",
@@ -28,6 +31,7 @@
     "babel-preset-stage-0": "^6.24.1",
     "babel-register": "^6.26.0",
     "clean-webpack-plugin": "^3.0.0",
+    "commander": "^4.0.1",
     "css-loader": "^3.0.0",
     "file-loader": "^4.0.0",
     "html-webpack-plugin": "^3.2.0",

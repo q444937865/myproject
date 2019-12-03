@@ -6,6 +6,10 @@ module.exports = {
   entry: {
     app: "./src/index.js"
   },
+  output: {
+    filename: "[name].[hash].js",
+    path: path.resolve(__dirname, "../dist")
+  },
   plugins: [
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
@@ -17,7 +21,7 @@ module.exports = {
   module: {
     rules: [{
         test: /.(js|jsx)$/,
-        include: [path.resolve(__dirname, '../src')],
+        // include: [path.resolve(__dirname, '../src')],
         loader: 'babel-loader',
         options: {
           plugins: ['syntax-dynamic-import'],

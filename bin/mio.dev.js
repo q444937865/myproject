@@ -1,7 +1,8 @@
 const webpack = require("webpack");
 const merge = require("webpack-merge");
-const common = require("./webpack.common.js");
+const common = require("./mio.common.js");
 const logPlugin = require("log-plugin");
+const path = require("path");
 
 module.exports = merge(common, {
   devtool: "inline-source-map",
@@ -16,10 +17,12 @@ module.exports = merge(common, {
   ],
   devServer: {
     contentBase: "./dist",
-    // port: 3000,          // 端口
+    host: "localhost",
+    port: 8080,          // 端口
     open: true, // 自动打开浏览器
     hot: true, // 开启热更新
     overlay: true, // 浏览器页面上显示错误
     noInfo: true
-  }
+  },
+  mode: 'development'
 });
