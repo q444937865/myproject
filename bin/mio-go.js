@@ -7,18 +7,14 @@ const devServerConfig = require("./mio.dev");
 
 const runWebpackDevServer = program => {
   const compiler = webpack(devServerConfig);
-  const server = new webpackDevServer(compiler, {
-    open: true,
-    noInfo: true
-  });
+  const server = new webpackDevServer(compiler, { open: true, noInfo: true });
   server.listen(
     devServerConfig.devServer.port,
     devServerConfig.devServer.host,
-    () => {} // 成功回调
+    (err, stats) => {
+      hasErr(err, stats);
+    } // 成功回调
   );
-  // compiler.run((err, stats) => {
-  //   hasErr(err, stats);
-  // });
 };
 const hasErr = (err, stats) => {
   if (err) {
