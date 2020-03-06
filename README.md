@@ -1,5 +1,7 @@
-# 🚀 Welcome to my project!
-纯凭喜好。
+﻿# 🚀 Welcome to my project!
+## just for daliy coding.
+
+## English || [简体中文](./README_ZH-CN.md)
 
 [![Build Status](https://travis-ci.org/q444937865/react-zz.svg?branch=master)](https://travis-ci.org/q444937865/react-zz)
 
