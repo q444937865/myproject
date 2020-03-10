@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import Example from "../page2";
+import gxr from "../useful/gxr";
 import "./home.less";
 export default class Home extends Component {
   state = {
@@ -9,6 +10,7 @@ export default class Home extends Component {
     storyRow: 0
   };
   componentWillMount() {
+    console.log(gxr.sum(0.1, 0.2));
     let { tipIndex } = this.state;
     this.tipChange = setInterval(() => {
       tipIndex = tipIndex == 3 ? 0 : tipIndex + 1;
