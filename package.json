@@ -4,17 +4,17 @@
   "description": "My webpack project for react",
   "main": "index.js",
   "scripts": {
-	"start": "mio go",
-	"test": "mio test",
-	"build": "mio k-on",
-	"dev": "mio k-on -w-d"
+    "start": "mio go --config webpack.config.js",
+    "test": "mio test",
+    "build": "mio k-on",
+    "dev": "mio k-on -w-d"
   },
   "author": "zz",
   "license": "ISC",
   "devDependencies": {
     "eslint": "^6.7.2",
     "uglifyjs-webpack-plugin": "^2.2.0",
-	"mio-cli": "git+https://github.com/q444937865/mio-cli.git"
+    "k-on-cli": "^0.0.5"
   },
   "dependencies": {
     "react": "^16.8.6",

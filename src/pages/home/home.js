@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import Example from "../page2";
-import "./home.css";
+import "./home.less";
 export default class Home extends Component {
   state = {
     tip: ".",
