@@ -1,0 +1,28 @@
+.mio-loading {
+  width: 100%;
+  text-align: center;
+  height: 100%;
+  .tip {
+    position: absolute;
+    text-align: left;
+    margin-left: -50px;
+    transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+  }
+  .story {
+    position: absolute;
+    font-size: 25px;
+    line-height: 40px;
+    height: 40px;
+    right: 50%;
+    bottom: 50%;
+    transform: translateX(50%);
+    overflow: hidden;
+    .storyMove {
+      transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+    }
+    p {
+      margin: 0;
+      height: 40px;
+    }
+  }
+}

@@ -1,52 +1,28 @@
-import React from "react";
+import React, { Suspense, lazy } from "react";
+import { BrowserRouter, HashRouter, Route, Switch } from "react-router-dom";
 
-import {
-  BrowserRouter,
-  HashRouter,
-  Route,
-  Switch,
-  Link,
-  Redirect
-} from "react-router-dom";
+import MioLoading from "../pages/MioLoding";
 
-import Home from "../pages/home/home";
-import Page1 from "../pages/page1/page1";
-import Nfpage from "../pages/notfoundpage/nfpage";
+const Home = lazy(() => import("../pages/home/home"));
+const Page1 = lazy(() => import("../pages/page1/page1"));
+const Nfpage = lazy(() => import("../pages/notfoundpage/nfpage"));
+
 
 const Routes = () => (
-  // 单页面、动态路由
-  //   <BrowserRouter>
-  //     <div>
-  //       <ul>
-  //         <li>
-  //           <Link to="/">首页</Link>
-  //         </li>
-  //         <li>
-  //           <Link to="/page1">Page1</Link>
-  //         </li>
-  //         <li>
-  //           <Link to="/what">what</Link>
-  //         </li>
-  //       </ul>
-  //       <Switch>
-  //         <Route exact path="/" component={Home} />
-  //         <Route path="/page1" component={Page1} />
-  //         <Route component={Nfpage} />
-  //       </Switch>
-  //     </div>
-  //   </BrowserRouter>
   // BrowserRouter
-  //   <BrowserRouter>
-  //     <Switch>
-  //       <Route exact path="/" component={Home} />
-  //       <Route path="/page1" component={Page1} />
-  //       <Route component={Nfpage} />
-  //     </Switch>
-  //   </BrowserRouter>
-  // 静态路由
-  <HashRouter>
-    <Route exact path="/" component={Home} />
-    <Route path="/page1" component={Page1} />
-  </HashRouter>
+  <BrowserRouter>
+    <Suspense fallback={MioLoading}>
+      <Switch>
+        <Route exact path='/' component={Home} />
+        <Route path='/page1' component={Page1} />
+        <Route component={Nfpage} />
+      </Switch>
+    </Suspense>
+  </BrowserRouter>
+  // HashRouter
+  // <HashRouter>
+  //   <Route exact path="/" component={Home} />
+  //   <Route path="/page1" component={Page1} />
+  // </HashRouter>
 );
 export default Routes;

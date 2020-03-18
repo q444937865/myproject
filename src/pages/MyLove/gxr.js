@@ -7,9 +7,11 @@ const gxr = {
   },
   // 随机数组 默认0-1
   randomArr: (len = 10, min = 0, max = 1, dot = 1) => {
-    return Array.from({ length: len }).map((t, i) =>
-      Number((Math.random() * (max - min + 1) + min).toFixed(dot))
-    );
+    return Array.from({ length: len }).map((t, i) => Number((Math.random() * (max - min + 1) + min).toFixed(dot)));
+  },
+  // 随机获取数组中的一个
+  rdGetOneArr: arr => {
+    return arr[~~(Math.random() * arr.length)];
   },
   // 生成1-10
   orderArr: (interval = 1, start = 1, len = 10) => {
