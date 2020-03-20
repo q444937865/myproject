@@ -1,60 +1,18 @@
 .home {
   width: 100%;
-  text-align: center;
   height: 100%;
-  .tip,
-  .story {
-    position: absolute;
-    right: 50%;
-    bottom: 50%;
-    transform: translate(50%, 50%);
-    transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
-  }
-  .tip {
-    animation: move-to-bottom 1s;
-    animation-delay: 3s;
-    animation-fill-mode: forwards;
-    font-size: 50px;
-  }
-  .story {
-    font-size: 25px;
-    line-height: 40px;
-    height: 40px;
-    width: 0;
-    overflow: hidden;
-    animation: hide-to-show 1s;
-    animation-delay: 4s;
-    animation-fill-mode: forwards;
-  }
-  .story .storyMove {
-    transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
-  }
-  .story p {
-    margin: 0;
-    height: 40px;
-  }
-  .dot {
-    position: absolute;
-  }
-
-  @keyframes move-to-bottom {
-    0% {
-      right: 50%;
-      bottom: 50%;
-    }
-    100% {
-      right: 90px;
-      bottom: 30px;
-      font-size: 20px;
+  .ant-layout-header {
+    background: #fff;
+    .ant-menu-horizontal {
+      line-height: 62px;
     }
   }
-
-  @keyframes hide-to-show {
-    0% {
-      width: 0;
-    }
-    100% {
-      width: 100%;
-    }
+  .logo {
+    width: 31px;
+    height: 31px;
+    margin: 16px 28px 16px 0;
+    float: left;
+    background-image: url(../assets/img/mio.png);
+    background-size: 100% 100%;
   }
 }

@@ -3,15 +3,15 @@ import { BrowserRouter, HashRouter, Route, Switch } from "react-router-dom";
 
 import MioLoading from "../pages/MioLoding";
 
+// import Home from "../pages/home/home";
 const Home = lazy(() => import("../pages/home/home"));
 const Page1 = lazy(() => import("../pages/page1/page1"));
 const Nfpage = lazy(() => import("../pages/notfoundpage/nfpage"));
 
-
 const Routes = () => (
   // BrowserRouter
   <BrowserRouter>
-    <Suspense fallback={MioLoading}>
+    <Suspense fallback={<MioLoading />}>
       <Switch>
         <Route exact path='/' component={Home} />
         <Route path='/page1' component={Page1} />
