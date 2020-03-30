@@ -9,12 +9,12 @@ const Page1 = lazy(() => import("../pages/page1/page1"));
 const Nfpage = lazy(() => import("../pages/notfoundpage/nfpage"));
 
 const Routes = () => (
-  // BrowserRouter
+  // BrowserRouter  // 刷新404请在webpackconfig的devServer中加入 historyApiFallback: true
   <BrowserRouter>
     <Suspense fallback={<MioLoading />}>
       <Switch>
-        <Route exact path='/' component={Home} />
-        <Route path='/page1' component={Page1} />
+        <Route path='/' component={Home} />
+        {/* <Route path='/page1' component={Page1} /> */}
         <Route component={Nfpage} />
       </Switch>
     </Suspense>
